@@ -45,7 +45,7 @@ for(var i=0;i<region12.length;i++)
   };
   temp.x=region12[i].ProcNo;
   temp.y=region12[i].Energy;
-  temp.r=5//region12[i].Energy;
+  temp.r=30//region12[i].Energy;
   atemp.push(temp);
   ftemp.data=atemp;
 
