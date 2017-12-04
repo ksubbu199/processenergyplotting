@@ -19,7 +19,8 @@ var groupBy = function(xs, key) {
 
 var groubedByRegion=groupBy(data, 'RegionID');
 var region12=groubedByRegion[String(regionNo)];
-var yodata=[]
+var yodata=[];
+
 
 function getRandomColor() {
            var letters = '0123456789ABCDEF'.split('');
@@ -44,14 +45,14 @@ for(var i=0;i<region12.length;i++)
   };
   temp.x=region12[i].ProcNo;
   temp.y=region12[i].Energy;
-  temp.r=30//region12[i].Energy;
+  temp.r=5//region12[i].Energy;
   atemp.push(temp);
   ftemp.data=atemp;
 
   yodata.push(ftemp);
 }
 
-console.log(yodata);
+//console.log(yodata);
 
 // var popData = {
 //   datasets: [{
