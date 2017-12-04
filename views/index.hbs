@@ -1,0 +1,137 @@
+<div class="container">
+  <h2>ChartJS - Line Chart</h2>
+  <canvas id="myChart" width="400" height="200" class="well"></canvas>
+</div>
+<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+<!-- <script src="../node_modules/chart.js/dist/Chart.bundle.js"></script> -->
+	<!-- <script src="../node_modules/hammerjs/hammer.min.js"></script> -->
+    <script src="/javascripts/hammer.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script> -->
+  <script src="/javascripts/zoom.js"></script>
+<!-- <script src="../chartjs-plugin-zoom.js"></script> -->
+
+<script>
+
+$(document).ready(function(){
+
+  function replaceAll(str, find, replace) {
+      return str.replace(new RegExp(find, 'g'), replace);
+  }
+
+  var popData=replaceAll('{{popData}}','&quot;','"');
+  popData=JSON.parse(popData);
+  new Chart(document.getElementById("myChart"), {
+      type: 'bubble',
+      data: {
+        labels: "Africa",
+        datasets:popData
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Regional energy consumption'
+        },
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "Energy"
+            }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "Processes"
+            }
+          }]
+        },
+          // scales: {
+          //     yAxes: [{
+          //         ticks: {
+          //             beginAtZero:true
+          //         }
+          //     }]
+          // },
+          // // Container for pan options
+          pan: {
+              // Boolean to enable panning
+              enabled: true,
+
+              // Panning directions. Remove the appropriate direction to disable
+              // Eg. 'y' would only allow panning in the y direction
+              mode: 'xy'
+          },
+
+          // Container for zoom options
+          zoom: {
+              // Boolean to enable zooming
+              enabled: true,
+
+              // Zooming directions. Remove the appropriate direction to disable
+              // Eg. 'y' would only allow zooming in the y direction
+              mode: 'xy',
+          }
+      }
+      /*options: {
+        title: {
+          display: true,
+          text: 'Regional energy consumption'
+        },
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "Energy"
+            }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "Processes"
+            }
+          }]
+        },
+        pan: {
+            enabled: true,
+            mode: 'xy'
+        },
+
+        // Container for zoom options
+        zoom: {
+            // Boolean to enable zooming
+            enabled: true,
+
+            // Zooming directions. Remove the appropriate direction to disable
+            // Eg. 'y' would only allow zooming in the y direction
+            mode: 'xy',
+        }
+      }*/
+  });
+
+
+
+
+
+  // var chartOptions = {
+  //     animation: true
+  // };
+  // //Get the context of the canvas element we want to select
+  //
+  // var bubbleChart = new Chart(document.getElementById("myChart"), {
+  //     type: 'bubble',
+  //     data: {
+  //       labels:"Africa",
+  //       popData
+  //     }
+  // });
+
+
+});
+
+</script>
