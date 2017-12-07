@@ -1,3 +1,4 @@
+
 <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -17,8 +18,8 @@
 
 <div class="carousel-inner">
 			{{#each regions}}
-								{{@index}}<!--If regions index == 0 add class active to div else nothing -->
-								<div class="item active">
+								<!--If regions index == 0 add class active to div else nothing -->
+								<div class="item {{#yif @index 0 }}active{{/yif}}">
 									<canvas id="myChart{{this.key}}" width="400" height="200"></canvas>
 								</div>
 
